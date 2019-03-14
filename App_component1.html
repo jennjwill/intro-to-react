@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>React App Component</title>
+  </head>
+  <body>
+
+    <div id="app"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <script type="text/babel">
+      class Welcome extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            number: 1
+          }
+        }
+        render() {
+          return (
+            <div>
+              <h1>Welcome to the coolest app!</h1>
+                <h2>Current day: {this.state.number}</h2>
+                <p>Current mood: {this.props.label}</p>
+                 </div>
+          );
+        }
+      }
+      //here I tried to use the checkpoint code as a guide to insert 'current mood' like the bloc app inserted 'current program' but it doesn't work & I have no idea why:
+     // Counter.defaultProps = {
+     //   label: "cranky"
+     // }
+
+      ReactDOM.render(
+        <Welcome />, document.getElementById('app')
+      );
+
+
+    </script>
+  </body>
+</html>
